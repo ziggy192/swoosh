@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--WelcomeVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="app_swoosh" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WelcomeVC" customModule="app_swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,7 +32,6 @@
                                 <rect key="frame" x="27.5" y="130" width="265" height="73"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="73" id="ewr-h6-bPX"/>
-                                    <constraint firstAttribute="width" constant="265" id="wBX-w4-PdI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="52"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -95,10 +94,10 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
         </scene>
-        <!--View Controller-->
+        <!--LeagueVC-->
         <scene sceneID="T40-nG-249">
             <objects>
-                <viewController id="fRT-LV-2BJ" sceneMemberID="viewController">
+                <viewController id="fRT-LV-2BJ" customClass="LeagueVC" customModule="app_swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cbx-ap-jZo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -182,6 +181,9 @@
                                 <state key="normal" title="NEXT">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="onNextPressed:" destination="fRT-LV-2BJ" eventType="touchUpInside" id="k65-MV-pUn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySs-E7-3C9">
                                 <rect key="frame" x="16" y="30" width="29" height="24"/>
@@ -215,22 +217,25 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Oby-Ue-QmW"/>
                     </view>
+                    <connections>
+                        <segue destination="YNV-5u-XEC" kind="show" identifier="SkillVCSegue" id="Fka-AS-E0b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P0W-cr-6rE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="wSn-VF-ROa" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="936.79999999999995" y="132.68365817091455"/>
         </scene>
-        <!--View Controller-->
+        <!--SkillVC-->
         <scene sceneID="JfS-bi-vF0">
             <objects>
-                <viewController id="YNV-5u-XEC" sceneMemberID="viewController">
+                <viewController id="YNV-5u-XEC" customClass="SkillVC" customModule="app_swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hok-Vd-9Mf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beginnerBallerBG" translatesAutoresizingMaskIntoConstraints="NO" id="i9d-it-Qjf">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="I0V-Pq-Yc3">
                                 <rect key="frame" x="16" y="223" width="288" height="57"/>
@@ -301,21 +306,17 @@
                             <constraint firstItem="P8w-UF-jyu" firstAttribute="trailing" secondItem="ejA-AI-fFm" secondAttribute="trailing" constant="20" id="LGN-Rp-q3l"/>
                             <constraint firstItem="P8w-UF-jyu" firstAttribute="bottom" secondItem="i9d-it-Qjf" secondAttribute="bottom" id="NhP-tA-Eqd"/>
                             <constraint firstItem="i9d-it-Qjf" firstAttribute="leading" secondItem="P8w-UF-jyu" secondAttribute="leading" id="Nqg-hr-fOs"/>
-                            <constraint firstItem="i9d-it-Qjf" firstAttribute="top" secondItem="hok-Vd-9Mf" secondAttribute="top" id="PXx-UW-aBO"/>
                             <constraint firstItem="P8w-UF-jyu" firstAttribute="bottom" secondItem="ejA-AI-fFm" secondAttribute="bottom" constant="20" id="Rkc-u1-6M9"/>
                             <constraint firstItem="i9d-it-Qjf" firstAttribute="leading" secondItem="P8w-UF-jyu" secondAttribute="leading" id="RmI-ti-nmC"/>
                             <constraint firstItem="P8w-UF-jyu" firstAttribute="trailing" secondItem="i9d-it-Qjf" secondAttribute="trailing" id="Sv0-Bt-Iu1"/>
                             <constraint firstItem="Bmg-tG-DCW" firstAttribute="centerX" secondItem="hok-Vd-9Mf" secondAttribute="centerX" id="WNh-v3-6TZ"/>
                             <constraint firstItem="Bmg-tG-DCW" firstAttribute="top" secondItem="YdT-VC-Nwq" secondAttribute="bottom" constant="54" id="XVs-ex-Qa0"/>
-                            <constraint firstItem="i9d-it-Qjf" firstAttribute="top" secondItem="P8w-UF-jyu" secondAttribute="top" id="ecW-Ew-EHH"/>
                             <constraint firstItem="P8w-UF-jyu" firstAttribute="trailing" secondItem="i9d-it-Qjf" secondAttribute="trailing" id="nOG-jt-crV"/>
                             <constraint firstItem="YdT-VC-Nwq" firstAttribute="centerX" secondItem="hok-Vd-9Mf" secondAttribute="centerX" id="nxB-R7-A0o"/>
                             <constraint firstItem="P8w-UF-jyu" firstAttribute="bottom" secondItem="i9d-it-Qjf" secondAttribute="bottom" id="pe6-1g-BNl"/>
                             <constraint firstItem="i9d-it-Qjf" firstAttribute="trailing" secondItem="P8w-UF-jyu" secondAttribute="trailing" id="qsX-bs-h0z"/>
                             <constraint firstItem="i9d-it-Qjf" firstAttribute="bottom" secondItem="P8w-UF-jyu" secondAttribute="bottom" id="qxY-R4-Ss0"/>
-                            <constraint firstItem="i9d-it-Qjf" firstAttribute="top" secondItem="P8w-UF-jyu" secondAttribute="top" id="rOA-QD-2yO"/>
                             <constraint firstItem="P8w-UF-jyu" firstAttribute="bottom" secondItem="i9d-it-Qjf" secondAttribute="bottom" id="sAt-2g-RrE"/>
-                            <constraint firstItem="i9d-it-Qjf" firstAttribute="top" secondItem="P8w-UF-jyu" secondAttribute="top" id="uOJ-zd-3EU"/>
                             <constraint firstItem="P8w-UF-jyu" firstAttribute="trailing" secondItem="i9d-it-Qjf" secondAttribute="trailing" id="whx-fJ-ece"/>
                             <constraint firstItem="P8w-UF-jyu" firstAttribute="trailing" secondItem="i9d-it-Qjf" secondAttribute="trailing" id="xif-dl-kFe"/>
                             <constraint firstItem="P8w-UF-jyu" firstAttribute="bottom" secondItem="i9d-it-Qjf" secondAttribute="bottom" id="yFl-or-WFX"/>
