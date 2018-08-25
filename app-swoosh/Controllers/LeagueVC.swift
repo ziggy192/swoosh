@@ -40,6 +40,12 @@ class LeagueVC: UIViewController {
         chooseDesiredLeague(desiredLeague: "coed")
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let skillVC = segue.destination as? SkillVC{
+            skillVC.player = self.player
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
